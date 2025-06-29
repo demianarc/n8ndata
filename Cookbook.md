@@ -1,18 +1,18 @@
-# 🧑‍🍳 Nike AI Data Analyst Chatbot Cookbook
+# 🧑‍🍳 AI Data Analyst Chatbot Cookbook (E-Commerce Example)
 
 ## 🍲 Ingredients
 
 - An n8n account (self-hosted or cloud)
 - A Nebius AI Studio account
 - Google Sheets & Docs API credentials (OAuth)
-- A copy of your example Google Sheet
+- A copy of your example Google Sheet (e-commerce transactions or similar)
 
 ## 🛠️ Setup & Integration
 
 ### 1. Configure n8n Environment
 
 - Sign in to your n8n account.
-- Create a new workflow or import `Workflow.json`.
+- Create a new workflow or import `Nike AI Data Analyst Chatbot FINAL.json` (example workflow for e-commerce analytics).
 
 ### 2. Setup Nebius LLM Node
 
@@ -94,10 +94,10 @@
 
 ## 📌 Additional Resources
 
-- [Nebius AI Studio](https://nebius.ai/)
+- [Nebius AI Studio](https://studio.nebius.com/)
 - [n8n Documentation](https://docs.n8n.io/)
 - [Google OAuth n8n Setup Guide](https://docs.n8n.io/integrations/builtin/credentials/Google/)
 
 ---
 
-MIT License — Contributions welcome! 
+Contributions welcome! 

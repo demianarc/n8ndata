@@ -1,6 +1,8 @@
-# Nike AI Data Analyst Chatbot
+# AI Data Analyst Chatbot for E-Commerce Analytics
 
 A production-grade AI Data Analyst Chatbot workflow for n8n, leveraging Nebius AI Studio's DeepSeek-V3-0324-fast LLM for advanced, structured data analysis and Google Workspace automation.
+
+This repository demonstrates a generic e-commerce analytics agent use case—no brand-specific logic or data is included. The workflow can be adapted to any e-commerce or transactional business scenario.
 
 ![Workflow Diagram](assets/workflow-diagram.png)
 
@@ -9,7 +11,7 @@ A production-grade AI Data Analyst Chatbot workflow for n8n, leveraging Nebius A
 ## 🛠️ Architecture Overview
 
 - **Workflow Orchestration:** Built in [n8n](https://n8n.io/), using modular nodes for event-driven automation and data transformation.
-- **LLM Integration:** Utilizes [Nebius AI Studio](https://nebius.ai/) DeepSeek-V3-0324-fast for high-performance, context-aware reasoning and structured output.
+- **LLM Integration:** Utilizes [Nebius AI Studio](https://studio.nebius.com/) DeepSeek-V3-0324-fast for high-performance, context-aware reasoning and structured output.
 - **Google Workspace Integration:** Secure OAuth2 connections to Google Sheets and Google Docs for real-time data retrieval and document updates.
 - **Memory & State:** Implements buffer memory for short-term context retention (last 5 messages) to enable coherent, multi-turn conversations.
 - **Structured Output Parsing:** Enforces strict JSON schema validation for LLM responses, ensuring reliable downstream automation.
@@ -65,7 +67,7 @@ A production-grade AI Data Analyst Chatbot workflow for n8n, leveraging Nebius A
 ---
 
 ## 🧩 Example Use Cases
-- Automated financial and sales analysis
+- Automated financial and sales analysis for e-commerce
 - Real-time lead generation and outreach
 - Instant database chatbots for internal knowledge
 - Competitive intelligence with live document updates

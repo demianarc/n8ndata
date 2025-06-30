@@ -21,10 +21,11 @@ This repository demonstrates a generic e-commerce analytics agent use case—no 
 ## ⚙️ Workflow Deep Dive
 
 This solution is designed for e-commerce analytics, but can be adapted to any transactional data scenario. The workflow includes:
-- Chat message trigger
-- LLM-powered agent for structured reasoning
-- Google Sheets/Docs integration for data and reporting
-- Memory and output parsing for robust automation
+- Chat message trigger (`When chat message received`)
+- LLM-powered agent for structured reasoning (`AI Agent`)
+- Google Sheets/Docs integration for data and reporting (`Get transactions by status`, `Get transactions by product name`, `Get all transactions`, `Document Strategy`)
+- Memory and output parsing for robust automation (`Buffer Memory`, `Structured Output Parser`)
+- Decision and routing logic (`If`, `If1`, `If2`, `Merge`, `Set`)
 
 For technical implementation, node configuration, and code examples, see [Cookbook.md](./Cookbook.md).
 
@@ -51,7 +52,7 @@ For technical implementation, node configuration, and code examples, see [Cookbo
 ---
 
 ## 🚀 Quick Start
-1. Import 'NebiusAIDataAnalystChatbot.json` into n8n.
+1. Import `ecommerce-analytics-agent-workflow.json` into n8n.
 2. Configure Nebius and Google credentials as described in [Cookbook.md](./Cookbook.md).
 3. Replace the Google Sheets/Docs URLs with your own.
 4. Activate the workflow and interact via the n8n chat interface or webhook.

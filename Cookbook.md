@@ -73,7 +73,7 @@
 - Responds with structured JSON:
   ```json
   {
-    "reply": "Text response to user",
+    "reply": "Short chat response (summary/tldr)",
     "doc_update": "Content to update Google Doc"
   }
   ```

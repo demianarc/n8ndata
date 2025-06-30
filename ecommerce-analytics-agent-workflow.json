@@ -1,5 +1,5 @@
 {
-  "name": "Nebius AI Data Analyst Chatbot",
+  "name": "Nebius AI Studio Data Analyst Chatbot",
   "nodes": [
     {
       "parameters": {
@@ -22,7 +22,7 @@
       "parameters": {
         "hasOutputParser": true,
         "options": {
-          "systemMessage": "=You are a helpful assistant.\nCurrent timestamp is {{$now}}\nWhen responding, explicitly structure your response as plain JSON in the following format, without any markdown or code formatting:\n\n{\n\"reply\": \"Your reply to the chat goes here\",\n\"doc_update\": \"Your content to insert into the document goes here\"\n}\n\nDo NOT wrap the output in markdown or code fences.\nIf one of these actions is not needed, use an empty string (\"\").\n",
+          "systemMessage": "=You are a helpful assistant.\nCurrent timestamp is {{$now}}\nWhen responding, explicitly structure your response as plain JSON in the following format, without any markdown or code formatting:\n\n{\n\"reply\": \"Short chat response (summary/tldr)\",\n\"doc_update\": \"Your content to insert into the document goes here\"\n}\n\nDo NOT wrap the output in markdown or code fences.\nIf one of these actions is not needed, use an empty string (\"\").\n",
           "maxIterations": 15
         }
       },
@@ -41,8 +41,8 @@
       "name": "Calculator",
       "type": "@n8n/n8n-nodes-langchain.toolCalculator",
       "position": [
-        -100,
-        860
+        -260,
+        740
       ],
       "typeVersion": 1
     },
@@ -518,7 +518,7 @@
           "actionFields": [
             {
               "action": "insert",
-              "text": "={{ $json[\"text\"] }}"
+              "text": "={{ $json[\"text\"].trim() }}"
             }
           ]
         }
@@ -565,7 +565,7 @@
           "conditions": [
             {
               "id": "41d919b0-b098-4aeb-8952-00a8fb5140c6",
-              "leftValue": "={{ $json[\"output\"][\"reply\"] !== undefined && $json[\"output\"][\"reply\"].trim() !== \"\" }}",
+              "leftValue": "={{ $json[\"output\"][\"doc_update\"] !== undefined && $json[\"output\"][\"doc_update\"].trim() !== \"\" }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -593,7 +593,7 @@
             {
               "id": "0ae2a41a-df63-4134-b038-30a215c3c4c1",
               "name": "text",
-              "value": "={{ $json[\"output\"][\"doc_update\"] }}",
+              "value": "={{ $json[\"output\"][\"reply\"] }}",
               "type": "string"
             }
           ]
@@ -603,8 +603,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        440,
-        40
+        340,
+        -40
       ],
       "id": "8bf17d40-bb8e-4567-adc5-32da5e3fec4c",
       "name": "Edit Fields1"
@@ -683,7 +683,7 @@
             {
               "id": "0ae2a41a-df63-4134-b038-30a215c3c4c1",
               "name": "text",
-              "value": "={{ $json[\"output\"][\"reply\"] }}",
+              "value": "={{ $json[\"output\"][\"doc_update\"] }}",
               "type": "string"
             }
           ]
@@ -935,7 +935,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "10641f86-8fb5-4773-b83e-494c27c149bb",
+  "versionId": "f0c86e50-8a9c-4c44-b77f-0d4e76a74b46",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "84ba1ec9f09cbfb9a5bc435af40e2c2fc0a3211c946ff1702a8b97457ed318b1"
